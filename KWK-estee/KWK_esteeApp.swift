@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct KWK_esteeApp: App {
+    @State private var showLaunchView: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                ContentView()
+                
+                
+                ZStack {
+                    if showLaunchView {
+                        launchScreenAnimation(showLaunchView: $showLaunchView)
+                            .transition(.opacity)
+                    }
+                }
+                .zIndex(2.0)
+            }
         }
     }
 }
