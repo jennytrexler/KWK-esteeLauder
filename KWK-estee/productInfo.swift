@@ -66,8 +66,18 @@ struct productInfo: View {
                                 }
                             }
                         }
-                    Text("Put text here")
-                        .offset(x: 0, y: 200)
+                    
+                    Text("made without" .uppercased())
+                        .offset(x: 0, y: 184)
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                        .opacity(animatingHeart ? 1.0 : 0)
+                        .foregroundColor(animatingHeart ? Color("madder") : Color("mimiPink"))
+                    Text(" animal-derived ingredients\n                fragrance\n            drying alcohol\n           synthetic colors\n               mineral oil\n                 sulfates\n                  sulfite\n                 silicone")
+                        .offset(x: 0, y: 267)
+                        .font(.footnote)
+                        .opacity(animatingHeart ? 1.0 : 0)
+                        .foregroundColor(animatingHeart ? Color("madder") : Color("mimiPink"))
                     
 //Star
                     Image(systemName: "circle.fill")
@@ -100,6 +110,18 @@ struct productInfo: View {
                                 }
                             }
                         }
+                    
+                    Circle()
+                        .frame(width: 80, height: 80)
+                        .offset(x: 0, y: 100)
+                        .scaleEffect(2.5)
+                    
+                    
+                    Text("       removes excess oil\n  strengthens skin barrier\nminimizes the size of pores")
+                        .offset(x: 0, y: 245)
+                        .font(.headline)
+//                        .opacity(animatingStar ? 1.0 : 0)
+                        .foregroundColor(animatingStar ? Color("amaranth") : Color("mimiPink"))
                     
 //Leaf
                     Image(systemName: "circle.fill")
