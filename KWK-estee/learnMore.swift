@@ -12,6 +12,8 @@ struct learnMore: View {
     @State private var coconut = false
     @State private var algae = false
     
+    @State var selectedTab: Int = 0
+    
     
     var body: some View {
         ZStack {
@@ -102,22 +104,47 @@ struct learnMore: View {
             .frame(width: 360)
             .foregroundColor(.white)
             
-//            Rectangle()
-//                .frame(width: 400, height: 50)
-//                .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
-//            Rectangle()
-//                .frame(width: 400, height: 50)
-//                .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
-//            Rectangle()
-//                .frame(width: 400, height: 50)
-//                .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
-//            Rectangle()
-//                .frame(width: 400, height: 50)
-//                .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
-            Rectangle()
-                .frame(width: 400, height: 50)
-                .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
-                .position(x: 200, y: 400)
+            VStack {
+                Rectangle()
+                    .frame(width: 400, height: 50)
+                    .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
+                Rectangle()
+                    .frame(width: 400, height: 50)
+                    .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
+                Rectangle()
+                    .frame(width: 400, height: 50)
+                    .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
+                Rectangle()
+                    .frame(width: 400, height: 50)
+                    .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
+                Rectangle()
+                    .frame(width: 400, height: 50)
+                    .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
+                    .offset(y: 200)
+            }
+            
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    ZStack {
+                        HStack {
+                            NavigationLink(destination: ContentView()) {
+                                Image(systemName: "calendar")
+                                    .foregroundColor(Color("DarkPurple"))
+                            }.padding(.all).navigationBarBackButtonHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                            NavigationLink(destination: productInfo()) {
+                                Image(systemName: "sparkles")
+                                    .foregroundColor(Color("DarkPurple"))
+                            }.padding(.all)
+                                .navigationBarBackButtonHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                            NavigationLink(destination: ContentView()) {
+                                Image(systemName: "wrench.and.screwdriver")
+                                    .foregroundColor(Color("DarkPurple"))
+                            }.padding(.all)
+                                .navigationBarBackButtonHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                        }
+                    }//ZStack
+                }
+            }//toolbar
             
         } //ZStack
     }
