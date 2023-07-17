@@ -67,17 +67,29 @@ struct productInfo: View {
                             }
                         }
                     
+//                    Circle()
+//                        .frame(width: 80, height: 80)
+//                        .offset(x: 0, y: 100)
+//                        .scaleEffect(2.5)
+
+                    
+//                    Text("          drying alcohol,\n   fragrance, mineral oil,\n sulfates, sulfite, silicone,\n         synthetic colors,\n          animal-derived\n              ingredients")
+//                        .offset(x: 0, y: 260)
+//                        .font(.headline)
+                    
                     Text("made without" .uppercased())
-                        .offset(x: 0, y: 184)
-                        .font(.subheadline)
+                        .offset(x: 0, y: 187)
+                        .font(.headline)
                         .fontWeight(.bold)
                         .opacity(animatingHeart ? 1.0 : 0)
-                        .foregroundColor(animatingHeart ? Color("madder") : Color("mimiPink"))
-                    Text(" animal-derived ingredients\n                fragrance\n            drying alcohol\n           synthetic colors\n               mineral oil\n                 sulfates\n                  sulfite\n                 silicone")
-                        .offset(x: 0, y: 267)
-                        .font(.footnote)
+                        .foregroundColor(animatingHeart ? Color("amaranth") : Color("mimiPink"))
+//                        .animation(.easeIn(duration: 0.1).delay(0.5), value: animatingHeart)
+                    Text("          drying alcohol,\n   fragrance, mineral oil,\n sulfates, sulfite, silicone,\n         synthetic colors,\n          animal-derived\n              ingredients")
+                        .offset(x: 0, y: 265)
+                        .font(.headline)
                         .opacity(animatingHeart ? 1.0 : 0)
-                        .foregroundColor(animatingHeart ? Color("madder") : Color("mimiPink"))
+                        .foregroundColor(animatingHeart ? Color("amaranth") : Color("mimiPink"))
+                    
                     
 //Star
                     Image(systemName: "circle.fill")
@@ -111,16 +123,16 @@ struct productInfo: View {
                             }
                         }
                     
-                    Circle()
-                        .frame(width: 80, height: 80)
-                        .offset(x: 0, y: 100)
-                        .scaleEffect(2.5)
+//                    Circle()
+//                        .frame(width: 80, height: 80)
+//                        .offset(x: 0, y: 100)
+//                        .scaleEffect(2.5)
                     
                     
-                    Text("       removes excess oil\n  strengthens skin barrier\nminimizes the size of pores")
-                        .offset(x: 0, y: 245)
+                    Text("+ removes excess oil\n + strengthens skin\n              barrier\n     + minimizes the\n         size of pores")
+                        .offset(x: 0, y: 257)
                         .font(.headline)
-//                        .opacity(animatingStar ? 1.0 : 0)
+                        .opacity(animatingStar ? 1.0 : 0)
                         .foregroundColor(animatingStar ? Color("amaranth") : Color("mimiPink"))
                     
 //Leaf

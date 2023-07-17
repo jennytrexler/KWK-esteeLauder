@@ -64,74 +64,63 @@ struct MainView: View {
                     }
                 }
             
-//            HStack {
-//                Rectangle()
-//                    .frame(width: UIScreen.main.bounds.width * 0.25, height: 40)
-//                    .padding(.trailing, 0)
-//                Rectangle()
-//                    .frame(width: UIScreen.main.bounds.width * 0.25, height: 40)
-//                    .padding(.leading, 0)
-//                    .padding(.trailing, 0)
-//                Rectangle()
-//                    .frame(width: UIScreen.main.bounds.width * 0.25, height: 40)
-//                Rectangle()
-//                    .frame(width: UIScreen.main.bounds.width * 0.25, height: 40)
-//                    .padding(.leading, 0)
-//            }
+            Image("singleBubble")
+                .resizable()
+                .frame(width: 300, height: 300)
             
-            //Row1
-            Image("estee 53")
+            Image("foamCleanser")
                 .resizable()
-                .frame(width: 200, height: 200)
-                .position(x: 100, y: 300)
-            Image("estee 14")
+                .frame(width: 90, height: 260)
+                .rotationEffect(.degrees(-15))
+                .offset(x: -30, y: -30)
+            
+            Image("cream")
                 .resizable()
-                .frame(width: 200, height: 200)
-                .position(x: 300, y: 300)
-            //Row2
-            Image("estee 9")
-                .resizable()
-                .frame(width: 200, height: 200)
-                .position(x: 100, y: 500)
-            Image("estee 46")
-                .resizable()
-                .frame(width: 200, height: 200)
-                .position(x: 300, y: 500)
+                .frame(width: 105, height: 100)
+                .rotationEffect(.degrees(7))
+                .offset(x: 35, y: -20)
+            
+            Text("introducing")
+            Text("NUTRIOUS")
+            
+            //EWG Logo
             Circle()
                 .foregroundColor(Color("amaranth"))
                 .frame(width: 106, height: 100)
-                .position(x: 260, y: 540)
+                .position(x: 280, y: 460)
             Image("EWG_pink")
                 .resizable()
                 .frame(width: 100, height: 100)
-                .position(x: 260, y: 540)
+                .position(x: 280, y: 460)
             
             VStack {
                 //Logo
                 Image("lauderLogoClear")
                     .resizable()
                     .frame(width: 250, height: 81.97)
-                    .offset(x: 0, y: -300)
+                    .offset(x: 0, y: -320)
                 
                 
-                Button(action: {
-                    selectedTab = 1
-                }, label: {
-                    Text("Learn More")
-                        .font(.subheadline)
-                        .padding()
-                        .padding(.horizontal)
-                        .background(Color.white)
-                        .frame(width: 150, height: 50)
-                        .foregroundColor(Color("salmonPink"))
-                        .scaleEffect(animateButton ? 1.2 : 1.0)
-                        .onAppear {
-                            withAnimation(.easeInOut(duration: 3).repeatCount(5)){
-                                animateButton.toggle()
-                            }
-                        }
-                }).cornerRadius(20)
+//                Button(action: {
+//                    selectedTab = 1
+//                }, label: {
+//                    Text("Learn More")
+//                        .font(.subheadline)
+//                        .padding()
+//                        .padding(.horizontal)
+//                        .background(Color.white)
+//                        .frame(width: 150, height: 50)
+//                        .foregroundColor(Color("salmonPink"))
+//                        .scaleEffect(animateButton ? 1.2 : 1.0)
+//                        .onAppear {
+//                            withAnimation(.easeInOut(duration: 3).repeatCount(5)){
+//                                animateButton.toggle()
+//                            }
+//                        }
+//                }).cornerRadius(20)
             } //VStack
+            
+            
         } //ZStack
     }
 }
