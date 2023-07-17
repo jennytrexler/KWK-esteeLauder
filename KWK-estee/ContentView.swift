@@ -64,61 +64,76 @@ struct MainView: View {
                     }
                 }
             
-            Image("singleBubble")
+            Image("lauderLogoClear")
                 .resizable()
-                .frame(width: 300, height: 300)
+                .frame(width: 250, height: 81.97)
+                .position(x: 195, y: 30)
             
-            Image("foamCleanser")
-                .resizable()
-                .frame(width: 90, height: 260)
-                .rotationEffect(.degrees(-15))
-                .offset(x: -30, y: -30)
+            HStack {
+                ZStack {
+                    Image("singleBubble")
+                        .resizable()
+                        .frame(width: 300, height: 300)
+                        .position(x: 195, y: 350)
+                        .opacity(0.7)
+                    Image("foamCleanser")
+                        .resizable()
+                        .frame(width: 90, height: 260)
+                        .rotationEffect(.degrees(-15))
+                        .offset(x: -30, y: -30)
+                    Image("cream")
+                        .resizable()
+                        .frame(width: 105, height: 100)
+                        .rotationEffect(.degrees(7))
+                        .offset(x: 35, y: -20)
+                    //EWG Logo
+                    Circle()
+                        .foregroundColor(Color("amaranth"))
+                        .frame(width: 106, height: 100)
+                        .position(x: 280, y: 460)
+                    Image("EWG_pink")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .position(x: 280, y: 460)
+                }
+            } //HStack
             
-            Image("cream")
-                .resizable()
-                .frame(width: 105, height: 100)
-                .rotationEffect(.degrees(7))
-                .offset(x: 35, y: -20)
-            
-            Text("introducing")
-            Text("NUTRIOUS")
-            
-            //EWG Logo
             Circle()
-                .foregroundColor(Color("amaranth"))
-                .frame(width: 106, height: 100)
-                .position(x: 280, y: 460)
-            Image("EWG_pink")
-                .resizable()
-                .frame(width: 100, height: 100)
-                .position(x: 280, y: 460)
+                .frame(width: 600, height: 600)
+                .position(x: 195, y: 900)
+                .foregroundColor(Color("mimiPink"))
             
             VStack {
-                //Logo
-                Image("lauderLogoClear")
+//                Text("introducing")
+//                    .font(.title3)
+//                    .foregroundColor(.white)
+//                    .position(x: 195, y: 70)
+//                    .fontDesign(.rounded)
+//                Text("NUTRIOUS")
+//                    .font(.largeTitle)
+//                    .rotation3DEffect(.degrees(10), axis: (1, 0, 0))
+//                    .foregroundColor(.white)
+//                    .fontWeight(.bold)
+//                    .fontDesign(.rounded)
+//                    .position(x: 195, y: -200)
+                Image("nutritious")
                     .resizable()
-                    .frame(width: 250, height: 81.97)
-                    .offset(x: 0, y: -320)
-                
-                
-//                Button(action: {
-//                    selectedTab = 1
-//                }, label: {
-//                    Text("Learn More")
-//                        .font(.subheadline)
-//                        .padding()
-//                        .padding(.horizontal)
-//                        .background(Color.white)
-//                        .frame(width: 150, height: 50)
-//                        .foregroundColor(Color("salmonPink"))
-//                        .scaleEffect(animateButton ? 1.2 : 1.0)
-//                        .onAppear {
-//                            withAnimation(.easeInOut(duration: 3).repeatCount(5)){
-//                                animateButton.toggle()
-//                            }
-//                        }
-//                }).cornerRadius(20)
-            } //VStack
+                    .frame(width: 260, height: 37)
+                    .offset(y: -260)
+            }
+            
+            Image("skinLoving")
+                .resizable()
+                .frame(width: 260, height: 60)
+                .position(x: 195, y: 150)
+            
+            Text("Ready to learn more?")
+                .font(.title3)
+                .font(.body)
+                .fontWeight(.semibold)
+                .foregroundColor(Color("brightPink"))
+                .position(x: 195, y: 660)
+            
             
             
         } //ZStack

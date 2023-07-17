@@ -15,6 +15,9 @@
 		1633FD422A63DC3A005D292B /* productInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1633FD412A63DC3A005D292B /* productInfo.swift */; };
 		1653F4542A645C2700925139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1653F4532A645C2700925139 /* Assets.xcassets */; };
 		1653F4562A65A0B100925139 /* oldHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1653F4552A65A0B100925139 /* oldHomePage.swift */; };
+		1685E02D2A65E65A00875A00 /* AkzidenzGroteskBQ-Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1685E02B2A65DDBD00875A00 /* AkzidenzGroteskBQ-Reg.ttf */; };
+		1685E02E2A65E65E00875A00 /* AkzidenzGroteskBQ-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1685E02C2A65DDC600875A00 /* AkzidenzGroteskBQ-Bold.ttf */; };
+		1685E0322A65F0E500875A00 /* learnMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1685E0312A65F0E500875A00 /* learnMore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		1633FD412A63DC3A005D292B /* productInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productInfo.swift; sourceTree = "<group>"; };
 		1653F4532A645C2700925139 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1653F4552A65A0B100925139 /* oldHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oldHomePage.swift; sourceTree = "<group>"; };
+		1685E02B2A65DDBD00875A00 /* AkzidenzGroteskBQ-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AkzidenzGroteskBQ-Reg.ttf"; path = "../../../Downloads/AkzidenzGroteskBQ-Reg.ttf"; sourceTree = "<group>"; };
+		1685E02C2A65DDC600875A00 /* AkzidenzGroteskBQ-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AkzidenzGroteskBQ-Bold.ttf"; path = "../../../Downloads/AkzidenzGroteskBQ-Bold.ttf"; sourceTree = "<group>"; };
+		1685E0312A65F0E500875A00 /* learnMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learnMore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +68,13 @@
 				1633FD2F2A63DB16005D292B /* KWK_esteeApp.swift */,
 				1633FD442A63DF9F005D292B /* LAUNCH-SCREEN */,
 				1633FD312A63DB16005D292B /* ContentView.swift */,
+				1685E0312A65F0E500875A00 /* learnMore.swift */,
 				1653F4552A65A0B100925139 /* oldHomePage.swift */,
 				1633FD412A63DC3A005D292B /* productInfo.swift */,
 				1633FD352A63DB17005D292B /* Preview Content */,
 				1653F4532A645C2700925139 /* Assets.xcassets */,
+				1685E02B2A65DDBD00875A00 /* AkzidenzGroteskBQ-Reg.ttf */,
+				1685E02C2A65DDC600875A00 /* AkzidenzGroteskBQ-Bold.ttf */,
 			);
 			path = "KWK-estee";
 			sourceTree = "<group>";
@@ -147,7 +156,9 @@
 			files = (
 				1633FD372A63DB17005D292B /* Preview Assets.xcassets in Resources */,
 				1653F4542A645C2700925139 /* Assets.xcassets in Resources */,
+				1685E02D2A65E65A00875A00 /* AkzidenzGroteskBQ-Reg.ttf in Resources */,
 				1633FD3E2A63DBC1005D292B /* LaunchScreen.storyboard in Resources */,
+				1685E02E2A65E65E00875A00 /* AkzidenzGroteskBQ-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1653F4562A65A0B100925139 /* oldHomePage.swift in Sources */,
+				1685E0322A65F0E500875A00 /* learnMore.swift in Sources */,
 				1633FD402A63DBE1005D292B /* launchScreenAnimation.swift in Sources */,
 				1633FD422A63DC3A005D292B /* productInfo.swift in Sources */,
 				1633FD322A63DB16005D292B /* ContentView.swift in Sources */,
