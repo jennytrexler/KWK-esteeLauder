@@ -68,6 +68,7 @@ struct MainView: View {
                 .resizable()
                 .frame(width: 250, height: 81.97)
                 .position(x: 195, y: 30)
+                .opacity(0)
             
             HStack {
                 ZStack {
@@ -89,12 +90,12 @@ struct MainView: View {
                     //EWG Logo
                     Circle()
                         .foregroundColor(Color("amaranth"))
-                        .frame(width: 106, height: 100)
-                        .position(x: 280, y: 460)
+                        .frame(width: 126, height: 120)
+                        .position(x: 287, y: 460)
                     Image("EWG_pink")
                         .resizable()
-                        .frame(width: 100, height: 100)
-                        .position(x: 280, y: 460)
+                        .frame(width: 120, height: 120)
+                        .position(x: 287, y: 460)
                 }
             } //HStack
             
@@ -109,23 +110,26 @@ struct MainView: View {
 //                    .foregroundColor(.white)
 //                    .position(x: 195, y: 70)
 //                    .fontDesign(.rounded)
-//                Text("NUTRIOUS")
+//                Text("NUTRITIOUS")
 //                    .font(.largeTitle)
-//                    .rotation3DEffect(.degrees(10), axis: (1, 0, 0))
+//                    .rotation3DEffect(.degrees(8), axis: (1, 0, 0))
 //                    .foregroundColor(.white)
 //                    .fontWeight(.bold)
 //                    .fontDesign(.rounded)
-//                    .position(x: 195, y: -200)
-                Image("nutritious")
+//                    .position(x: 195, y: -250)
+//                    .shadow(color: Color("amaranth"), radius: 10)
+                Image("nutriPink")
                     .resizable()
                     .frame(width: 260, height: 37)
-                    .offset(y: -260)
+//                    .offset(y: -260)
+                    .cornerRadius(5)
+                    .padding(.bottom, 450)
             }
             
-            Image("skinLoving")
-                .resizable()
-                .frame(width: 260, height: 60)
-                .position(x: 195, y: 150)
+//            Image("skinLoving")
+//                .resizable()
+//                .frame(width: 260, height: 60)
+//                .position(x: 195, y: 150)
             
             Text("Ready to learn more?")
                 .font(.title3)
