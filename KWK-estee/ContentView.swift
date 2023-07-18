@@ -20,16 +20,16 @@ struct ContentView: View {
                         Text("Home")
                     }
                     .tag(0)
-                productInfo()
+                learnMore()
                     .tabItem {
-                        Image(systemName: "globe")
+                        Image(systemName: "camera.macro")
                         Text("Learn More")
                     }
                     .tag(1)
-                Text("profile tab".uppercased())
+                productInfo()
                     .tabItem {
-                        Image(systemName: "person.fill")
-                        Text("Buy")
+                        Image(systemName: "heart.fill")
+                        Text("Benefits")
                     }
                     .tag(2)
             }//BottomNav

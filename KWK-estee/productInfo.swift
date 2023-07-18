@@ -21,13 +21,18 @@ struct productInfo: View {
     
     var body: some View {
         ZStack {
-            Color("lavenderBlush")
+            LinearGradient(colors: [Color("otherPink"), Color("lavenderBlush")], startPoint: animateGradient ? .top : .bottom, endPoint: animateGradient ? .bottomTrailing : .topTrailing)
                 .ignoresSafeArea()
+                .onAppear {
+                    withAnimation(.linear(duration: 3.0).repeatForever(autoreverses: true)) {
+                        animateGradient.toggle()
+                    }
+                }
             
-            Image("lauderLogoClear")
-                .resizable()
-                .frame(width: 250, height: 81.97)
-                .offset(x: 0, y: -330)
+//            Image("lauderLogoClear")
+//                .resizable()
+//                .frame(width: 250, height: 81.97)
+//                .offset(x: 0, y: -330)
             
             Image("estee_20_clear")
                 .resizable()
@@ -87,6 +92,7 @@ struct productInfo: View {
                     Text("          drying alcohol,\n   fragrance, mineral oil,\n sulfates, sulfite, silicone,\n         synthetic colors,\n          animal-derived\n              ingredients")
                         .offset(x: 0, y: 265)
                         .font(.headline)
+                        .fontWeight(.medium)
                         .opacity(animatingHeart ? 1.0 : 0)
                         .foregroundColor(animatingHeart ? Color("amaranth") : Color("mimiPink"))
                     
@@ -132,6 +138,7 @@ struct productInfo: View {
                     Text("+ removes excess oil\n + strengthens skin\n              barrier\n     + minimizes the\n         size of pores")
                         .offset(x: 0, y: 257)
                         .font(.headline)
+                        .fontWeight(.medium)
                         .opacity(animatingStar ? 1.0 : 0)
                         .foregroundColor(animatingStar ? Color("amaranth") : Color("mimiPink"))
                     
@@ -166,6 +173,14 @@ struct productInfo: View {
                                 }
                             }
                         }
+                    
+                    Text("+ 92% naturally\nderived\n+ responsiibly-sourced\nskin essential nutrients\n+ packaging\nsustainability")
+                        .font(.body)
+                        .offset(x: 0, y: 254)
+                        .fontWeight(.medium)
+                        .multilineTextAlignment(.center)
+                        .opacity(animatingCross ? 1.0 : 0)
+                        .foregroundColor(animatingCross ? Color("amaranth") : Color("mimiPink"))
                     
                 } //ZStack
                 

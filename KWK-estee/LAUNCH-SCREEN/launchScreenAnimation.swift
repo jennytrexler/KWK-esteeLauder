@@ -32,11 +32,11 @@ struct launchScreenAnimation: View {
                     HStack(spacing: 0) {
                         ForEach(loadingText.indices) { index in
                             Text(loadingText[index])
-                            // change font to necessary
-                              .font(.headline)
+                              .font(.body)
+                              .fontDesign(.rounded)
                             // change color to necessary
-                              .foregroundColor(.pink)
-                              .fontWeight(.heavy)
+                              .foregroundColor(Color("brightPink"))
+                              .fontWeight(.medium)
                               .offset(y: counter == index ? -5 : 0)
                         }
                     } .transition(AnyTransition.opacity.animation(.easeIn))
@@ -52,7 +52,7 @@ struct launchScreenAnimation: View {
                 if counter == lastIndex {
                     counter = 0
                     loops += 1
-                    if loops >= 2 {
+                    if loops >= 1 {
                         showLaunchView = false
                     }
                 } else {

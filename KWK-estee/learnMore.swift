@@ -14,6 +14,15 @@ struct learnMore: View {
     
     @State var selectedTab: Int = 0
     
+    @State private var minerals = false
+    @State private var vitamins = false
+    @State private var fats = false
+    @State private var phyto = false
+    @State private var poly = false
+    @State private var iso = false
+    
+    let icons: [String] = ["estee 1", "estee 3", "estee 8"]
+    
     
     var body: some View {
         ZStack {
@@ -33,9 +42,24 @@ struct learnMore: View {
                 .foregroundColor(Color("mimiPink").opacity(0.1))
                 .blur(radius: 10)
                 .offset(x: -100, y: -150)
+            //end background
             
             //3 circles
             VStack {
+                Rectangle()
+                    .opacity(0)
+                    .frame(height: 80)
+                
+                TabView {
+                    ForEach(icons, id: \.self) { icon in
+                        Image(icon)
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                .tabViewStyle(PageTabViewStyle())
+                .frame(height: 260)
+                
                 Text("MADE WITH")
                     .padding(.bottom, 1)
                     .foregroundColor(Color("amaranth"))
@@ -98,56 +122,91 @@ struct learnMore: View {
                                 }
                         }
                     }
-                }
+                } //HStack
+                
+                Spacer()
             }
             .padding(20)
             .frame(width: 360)
             .foregroundColor(.white)
+            //end 3 circles
             
+            //nutrient info
             VStack {
                 Rectangle()
+                    .opacity(0)
+                    .frame(height: 400)
+                
+                Text(minerals ? "reduces damage from sun exposure\nand maintains skin moisture" : "MINERALS")
                     .frame(width: 400, height: 50)
-                    .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
-                Rectangle()
-                    .frame(width: 400, height: 50)
-                    .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
-                Rectangle()
-                    .frame(width: 400, height: 50)
-                    .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
-                Rectangle()
-                    .frame(width: 400, height: 50)
-                    .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
-                Rectangle()
-                    .frame(width: 400, height: 50)
-                    .foregroundStyle(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
-                    .offset(y: 200)
-            }
-            
-            .toolbar {
-                ToolbarItemGroup(placement: .bottomBar) {
-                    ZStack {
-                        HStack {
-                            NavigationLink(destination: ContentView()) {
-                                Image(systemName: "calendar")
-                                    .foregroundColor(Color("DarkPurple"))
-                            }.padding(.all).navigationBarBackButtonHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                            NavigationLink(destination: productInfo()) {
-                                Image(systemName: "sparkles")
-                                    .foregroundColor(Color("DarkPurple"))
-                            }.padding(.all)
-                                .navigationBarBackButtonHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                            NavigationLink(destination: ContentView()) {
-                                Image(systemName: "wrench.and.screwdriver")
-                                    .foregroundColor(Color("DarkPurple"))
-                            }.padding(.all)
-                                .navigationBarBackButtonHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                    .background(LinearGradient(colors: [Color("amaranth"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
+                    .multilineTextAlignment(.center)
+                    .fontDesign(.rounded)
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            minerals.toggle()
                         }
-                    }//ZStack
-                }
-            }//toolbar
+                    }
+                Text(vitamins ? "protects cells from damage\nand assists in cell growth" : "VITAMINS")
+                    .frame(width: 400, height: 50)
+                    .background(LinearGradient(colors: [Color("salmonPink"),  Color("mimiPink")], startPoint: .trailing, endPoint: .leading))
+                    .offset(y: -10)
+                    .multilineTextAlignment(.center)
+                    .fontDesign(.rounded)
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            vitamins.toggle()
+                        }
+                    }
+                Text(fats ? "keeps skin hydrated, plump, and young" : "ESSENTIAL FATS")
+                    .frame(width: 400, height: 50)
+                    .background(LinearGradient(colors: [Color("brightPink"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
+                    .offset(y: -20)
+                    .multilineTextAlignment(.center)
+                    .fontDesign(.rounded)
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            fats.toggle()
+                        }
+                    }
+                Text(phyto ? "helps retain firmness and improves blood flow" : "PHYTONUTRIENTS")
+                    .frame(width: 400, height: 50)
+                    .background(LinearGradient(colors: [Color("otherPink"),  Color("mimiPink")], startPoint: .trailing, endPoint: .leading))
+                    .offset(y: -30)
+                    .multilineTextAlignment(.center)
+                    .fontDesign(.rounded)
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            phyto.toggle()
+                        }
+                    }
+                Text(poly ? "protects against oxidative damage and slows aging" : "POLYPHENOLS")
+                    .frame(width: 400, height: 50)
+                    .background(LinearGradient(colors: [Color("salmonPink"),  Color("mimiPink")], startPoint: .leading, endPoint: .trailing))
+                    .offset(y: -40)
+                    .multilineTextAlignment(.center)
+                    .fontDesign(.rounded)
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            poly.toggle()
+                        }
+                    }
+                Text(iso ? "keeps skin hydrated, plump, and young" : "ISOFLAVONES")
+                    .frame(width: 400, height: 50)
+                    .background(LinearGradient(colors: [Color("brightPink"),  Color("mimiPink")], startPoint: .trailing, endPoint: .leading))
+                    .offset(y: -50)
+                    .multilineTextAlignment(.center)
+                    .fontDesign(.rounded)
+                    .onTapGesture {
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            iso.toggle()
+                        }
+                    }
+            }.foregroundColor(.white)
+            //end nutrientInfo
             
         } //ZStack
-    }
+    } //View
 }
 
 struct learnMore_Previews: PreviewProvider {
