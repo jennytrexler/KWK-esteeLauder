@@ -51,7 +51,7 @@ struct launchScreenAnimation: View {
                 let lastIndex = loadingText.count - 1
                 if counter == lastIndex {
                     counter = 0
-                    loops += 1
+                    loops += 2
                     if loops >= 1 {
                         showLaunchView = false
                     }
